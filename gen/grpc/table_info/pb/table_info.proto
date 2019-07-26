@@ -1,0 +1,30 @@
+// Code generated with goa v2.0.0-wip, DO NOT EDIT.
+//
+// TableInfo protocol buffer definition
+//
+// Command:
+// $ goa gen github.com/jamie-doyle/goa-test/design
+
+syntax = "proto3";
+
+package table_info;
+
+option go_package = "table_infopb";
+
+// Service is the TableInfo service interface.
+service TableInfo {
+	// GetInfo implements get_info.
+	rpc GetInfo (GetInfoRequest) returns (GetInfoResponse);
+}
+
+message GetInfoRequest {
+	// Table name
+	string table_name = 1;
+}
+
+message GetInfoResponse {
+	// Describes the table being returned
+	string description = 3;
+	// A table ID
+	string table_id = 1;
+}
